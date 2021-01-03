@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Reddit Upvotes Predict</title>
+
+  <!-- Loading font types -->
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<style type="text/css">
+  
+.jumbotron {
+  background-image: url("/static/rd2.png");
+  background-size: cover;
+}
+
+</style>
+</head>
+ <div class="container-fluid">
+<body onload="myFunction()">
+
+  <div class="jumbotron" ><center> <h1 style="color:white;margin-top: 30px;">Reddit Upvotes Predictor</h1><center></div>
+
+    <form action="{{ url_for('predict')}}"method="POST">
+      <div class="form-group">
+    	<textarea id='text' class="form-control" rows="2" type="text" name="text" placeholder="Enter your Comment" required="required" size="25" style="font-size:25px;" ></textarea>
+
+      <button id='button'  type="submit" class="btn btn-warning btn-lg btn-block " style="font-size: 20px;margin-top:20px;">Predict Upvote</button>
+     <center> <span class="badge badge-info"><label>Made by Ekta Shukla</label></span></center>
+
+</div>
+    </form>
+
+    <center><div style="margin-top: -15px;" id="piechart" style="color:green;font-size: 20px;">Total Upvotes You will get is :<b>{{pred_upvote}}</b></div></center>
+
+
+
+</div>
+
+</body>
+</html>
